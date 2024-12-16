@@ -1,12 +1,22 @@
 syntax = "proto3";
 
-package dk.adamino.grpc.chat;
+package com.github.andreytondo;
 
 service ChatService {
   rpc chat(stream ChatMessage) returns (stream ChatMessage);
+
+  rpc joinGroup(JoinGroupRequest) returns (JoinGroupResponse);
 }
 
 message ChatMessage {
-  string user = 1;
-  string message = 2;
+  string user = 2;  // The sender's username
+  string message = 3; // The chat message content
+}
+
+message JoinGroupRequest {
+  string user = 2;
+}
+
+message JoinGroupResponse {
+  string status = 2;
 }
