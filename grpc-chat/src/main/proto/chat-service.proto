@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package dk.adamino.grpc.chat;
+
+service ChatService {
+  rpc chat(stream ChatMessage) returns (stream ChatMessage);
+}
+
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+}
