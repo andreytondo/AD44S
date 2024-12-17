@@ -1,5 +1,6 @@
 package com.github.andreytondo.client;
 
+import com.github.andreytondo.client.interfaces.ChatLogger;
 import com.github.andreytondo.server.ChatServer;
 
 import java.util.Scanner;
@@ -11,10 +12,10 @@ public class ChatClient {
         int port = ChatServer.SERVER_PORT;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your username: ");
+        System.out.print("Informe seu usuário: ");
         String username = scanner.nextLine();
 
-        ChatClientHandler client = new ChatClientHandler(host, port);
+        ChatClientHandler client = new ChatClientHandler(host, port, new ChatLogger());
         try {
             client.joinGroup(username);
             client.startChat(username);
