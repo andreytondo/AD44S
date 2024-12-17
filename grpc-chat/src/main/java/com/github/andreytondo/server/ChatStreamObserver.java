@@ -19,6 +19,7 @@ public class ChatStreamObserver implements StreamObserver<ChatMessage> {
 
     @Override
     public void onNext(ChatMessage chatMessage) {
+        System.out.println(chatMessage.getUser() + ": " + chatMessage.getMessage());
         for (StreamObserver<ChatMessage> observer : groupObservers) {
             if (observer == responseObserver) {
                 continue;
