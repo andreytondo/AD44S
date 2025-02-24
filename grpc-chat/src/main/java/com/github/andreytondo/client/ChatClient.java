@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ChatClient {
 
     public static void main(String[] ignoredArgs) throws InterruptedException {
-        String host = "127.0.0.1";
+        String host = "172.30.21.247";
         int port = ChatServer.SERVER_PORT;
 
         Scanner scanner = new Scanner(System.in);
