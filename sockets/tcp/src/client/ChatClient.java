@@ -29,6 +29,8 @@ public class ChatClient {
                         System.out.print("\r");
                         System.out.print("\033[2K");
                         System.out.println(formatMessage("Servidor", serverMessage));
+                        System.out.print("\r");
+                        System.out.print("\033[2K");
                         System.out.print("Você: ");
                     }
                 } catch (IOException e) {
