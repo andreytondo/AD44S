@@ -26,7 +26,10 @@ public class ChatClient {
                 try {
                     String serverMessage;
                     while ((serverMessage = in.readLine()) != null) {
+                        System.out.print("\r");
+                        System.out.print("\033[2K");
                         System.out.println(formatMessage("Servidor", serverMessage));
+                        System.out.print("Você: ");
                     }
                 } catch (IOException e) {
                     System.err.println("[Erro] Conexão com o servidor perdida.");
